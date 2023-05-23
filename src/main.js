@@ -1,4 +1,5 @@
-import './assets/main.css'
+import './assets/main.css';
+import './assets/tailwind/styles.css'
 import PrimeVue from 'primevue/config';
 //theme
 import "primevue/resources/themes/lara-light-indigo/theme.css";
