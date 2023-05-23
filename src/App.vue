@@ -1,5 +1,6 @@
 <script setup>
 import PV from './components/PV.vue';
+import MAutoComplete from './components/MAutoComplete.vue'
 </script>
 
 <template>
@@ -7,6 +8,7 @@ import PV from './components/PV.vue';
   <h1 class="text-3xl font-bold underline">
     Hello world!
   </h1>
+  <MAutoComplete></MAutoComplete>
 </template>
 
 <style scoped>
