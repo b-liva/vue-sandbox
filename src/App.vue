@@ -1,14 +1,11 @@
 <script setup>
-import PV from './components/PV.vue';
-import MAutoComplete from './components/MAutoComplete.vue'
+import AutoComplete from "./components/jlib/AutoComplete.vue";
 </script>
 
 <template>
-  <PV></PV>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-  <MAutoComplete></MAutoComplete>
+  <div class="w-48">
+    <AutoComplete></AutoComplete>
+  </div>
 </template>
 
 <style scoped>
