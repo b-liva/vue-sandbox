@@ -1,6 +1,6 @@
 <script setup>
 import {ref} from 'vue';
-import AutoComplete from "./components/jlib/AutoComplete.vue";
+import AutoComplete from "./components/misc/AutoComplete.vue";
 let countries =ref([
       {key: 1, title: 'spain' },
       {key: 2, title: 'england' },
