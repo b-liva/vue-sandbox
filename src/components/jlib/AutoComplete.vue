@@ -1,13 +1,8 @@
 <script setup>
 import {ref} from "vue";
-let data = ref();
+const props = defineProps(['itemsList'])
+
 let showItems = ref(false)
-data.value = [
-  {key: 1, title: 'spain' },
-  {key: 2, title: 'england' },
-  {key: 3, title: 'france' },
-  {key: 4, title: 'germany' },
-]
 let searchText = ref("")
 let filteredData = ref();
 
@@ -16,7 +11,7 @@ const handleSelection = (selectedItem) => {
   showItems.value = false;
 }
 const search = () => {
-  filteredData.value = data.value.filter(item => item.title.includes(searchText.value));
+  filteredData.value = props.itemsList.filter(item => item.title.includes(searchText.value));
   showItems.value = !stringIsEmpty(searchText.value);
 }
 const stringIsEmpty = (str) => {
