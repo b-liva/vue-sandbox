@@ -7,11 +7,12 @@ let countries =ref([
       {key: 3, title: 'france' },
       {key: 4, title: 'germany' },
     ]);
+let fruits = [ 'Apple', 'Banana', 'Orange', 'Mango', 'Pear', 'Peach', 'Grape', 'Tangerine', 'Pineapple'];
 </script>
 
 <template>
   <div class="w-48">
-    <AutoComplete :items-list="countries"></AutoComplete>
+    <AutoComplete :items="fruits"></AutoComplete>
   </div>
 </template>
 
