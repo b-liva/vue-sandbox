@@ -1,6 +1,7 @@
 <script setup>
 import {ref} from "vue";
-const props = defineProps(['itemsList'])
+const props = defineProps(['itemsList']);
+const emit = defineEmits(['item'])
 
 let showItems = ref(false)
 let searchText = ref("")
@@ -20,6 +21,7 @@ const handleSelection = (item) => {
   searchText.value = item.title;
   selectedItem.value = item;
   showItems.value = false;
+  emit('item', selectedItem.value)
 }
 </script>
 
@@ -30,7 +32,7 @@ const handleSelection = (item) => {
         type="text"
         v-model="searchText"
         @keyup="search">
-    <div v-show="showItems" class="bg-white border-blue-950 shadow-md absolute w-full rounded" @focusout="showItems=false">
+    <div v-show="showItems" class="z-20 bg-white border-blue-950 shadow-md absolute w-full rounded" @focusout="showItems=false">
       <div
           v-for="d in filteredData"
           :key="d.key"
@@ -39,9 +41,6 @@ const handleSelection = (item) => {
       >{{ d.title }}</div>
     </div>
   </div>
-  <div>other text</div>
-  <div>{{searchText}}</div>
-  <div>{{selectedItem}}</div>
 </template>
 
 <style scoped>
