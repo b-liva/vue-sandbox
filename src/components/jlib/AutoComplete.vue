@@ -21,12 +21,12 @@ const stringIsEmpty = (str) => {
 
 <template>
   <div class="relative">
-    <input class="border-blue-950" type="text" v-model="searchText" @keyup="search">
-    <div v-show="showItems" class="bg-gray-200 p-4 absolute ">
+    <input class="border border-gray-200 focus:border-gray-400 shadow-md rounded p-1 w-full" type="text" v-model="searchText" @keyup="search">
+    <div v-show="showItems" class="bg-white border-blue-950 shadow-md absolute w-full rounded" @focusout="showItems=false">
       <div
           v-for="d in filteredData"
           @click="handleSelection(d)"
-          class="px-2 cursor-pointer hover:bg-gray-100 rounded"
+          class="cursor-pointer hover:bg-gray-100 rounded pb-0.5 my-1 mx-1 pl-2"
       >{{ d.title }}</div>
     </div>
   </div>
