@@ -2,6 +2,7 @@
 import {ref} from 'vue';
 import AutoComplete from "./components/jlib/AutoComplete.vue";
 let selectedIem = ref();
+let searchText = ref('a')
 let countries =ref([
       {key: 1, title: 'spain' },
       {key: 2, title: 'england' },
@@ -15,9 +16,9 @@ const setItem = (e) => {
 </script>
 
 <template>
-  <div class="w-48">
-    <AutoComplete :items-list="countries" @item="setItem"></AutoComplete>
-    <div>other texts</div>
+  <div class="w-64">
+    <AutoComplete :search-text="searchText" @update:search-text="nv => searchText = nv" :item-list="countries" @item="setItem"></AutoComplete>
+    <div><span>selected item in parent:</span> <span class="text-blue-900 font-bold">{{selectedIem?.title}}</span></div>
     <div>{{selectedIem}}</div>
   </div>
 </template>
